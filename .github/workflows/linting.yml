@@ -3,7 +3,7 @@ name: linting
 on: 'push'
 
 jobs:
-  black:
+  python-black:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository at the current branch
@@ -20,3 +20,12 @@ jobs:
       - name: Run black formatter
         working-directory: src/python
         run: black --diff .
+  typescript-tsc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository at the current branch
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.16.0
+      - run: npm build
