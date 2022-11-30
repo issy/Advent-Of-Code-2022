@@ -1,5 +1,5 @@
 # Advent Of Code 2022
-<img src="https://img.shields.io/github/workflow/status/issy/Advent-Of-Code-2022/linting?&style=for-the-badge">
+<img src="https://img.shields.io/github/workflow/status/issy/Advent-Of-Code-2022/build?&style=for-the-badge">
 <img src="https://img.shields.io/github/workflow/status/issy/Advent-Of-Code-2022/tests?label=tests&style=for-the-badge">
 
 This is just a little repo to hold my solutions for the Advent Of Code challenge for 2022
