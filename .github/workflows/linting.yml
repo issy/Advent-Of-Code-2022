@@ -8,6 +8,7 @@ jobs:
     steps:
       - name: Checkout the repository at the current branch
         uses: actions/checkout@v3
+      - run: cd src/python
       - name: Set up Python 3.11.0
         uses: actions/setup-python@v4
         with:
