@@ -1,2 +1,2 @@
 def test_foo():
-    assert str(True) == "True"
+    assert str(False) == "True"
