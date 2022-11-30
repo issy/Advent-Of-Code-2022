@@ -1,0 +1,7 @@
+[tool.black]
+line-length = 127
+target-version = ["py310"]
+exclude = "venv"
+
+[tool.pytest.ini_options]
+testpaths = ["src/*/test.py"]
