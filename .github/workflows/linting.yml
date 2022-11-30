@@ -29,3 +29,4 @@ jobs:
         with:
           node-version: 16.16.0
       - run: npm build
+        working-directory: src/typescript
