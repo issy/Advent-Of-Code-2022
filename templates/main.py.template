@@ -1,0 +1,21 @@
+import os
+
+
+def part_1(inp: str) -> None:
+    ...
+
+
+def part_2(inp: str) -> None:
+    ...
+
+
+if __name__ == "__main__":
+    os.chdir(os.path.dirname(__file__))
+    with open("./input.txt", "r") as fp:
+        inp = fp.read()
+
+    part_1_result = part_1(inp)
+    print("part 1 result:", part_1_result)
+
+    part_2_result = part_2(inp)
+    print("part 2 result:", part_2_result)
