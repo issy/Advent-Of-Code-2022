@@ -6,4 +6,4 @@ This is just a little repo to hold my solutions for the Advent Of Code challenge
 
 To get started, run `python3 scripts/new_day.py <framework>` passing in a valid framework parameter
 
-From there, you can fill in your sample input/outputs and your actual problem input in the directory `src/day_X/` where X is the day of the month.
+From there, you can fill in your sample input/outputs and your actual problem input in the directory `common/day_X/` where X is the day of the month.
