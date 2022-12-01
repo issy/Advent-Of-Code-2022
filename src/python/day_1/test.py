@@ -1,0 +1,28 @@
+import os.path
+
+from .main import part_1, part_2
+
+
+os.chdir(os.path.dirname(__file__))
+
+
+def test_part_1():
+    with open(f"../../../common/{os.path.split(os.getcwd())[-1]}/sample_input.txt", "r") as fp:
+        sample_input = fp.read()
+
+    with open(f"../../../common/{os.path.split(os.getcwd())[-1]}/sample_output_1.txt", "r") as fp:
+        expected_output = fp.read()
+
+    returned_output = part_1(sample_input)
+    assert returned_output == int(expected_output)
+
+
+def test_part_2():
+    with open(f"../../../common/{os.path.split(os.getcwd())[-1]}/sample_input.txt", "r") as fp:
+        sample_input = fp.read()
+
+    with open(f"../../../common/{os.path.split(os.getcwd())[-1]}/sample_output_2.txt", "r") as fp:
+        expected_output = fp.read()
+
+    returned_output = part_2(sample_input)
+    assert returned_output == int(expected_output)
