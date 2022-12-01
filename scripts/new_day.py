@@ -10,18 +10,14 @@ frameworks = {
         "files": (
             ("__init__.py", None),
             ("main.py", "main.py.template"),
-            ("input.txt", None),
-            ("sample_input.txt", None),
-            ("sample_output_1.txt", None),
-            ("sample_output_2.txt", None),
-            ("test.py", "test.py.template"),
+            ("test.py", "test.py.template")
         )
     },
     "typescript": {
         "base_path": "typescript",
         "files": (
             ("index.ts", "index.ts.template"),
-            ("index.ts.spec", "index.ts.spec.template")
+            ("index.ts.spec", "index.spec.ts.template")
         )
     }
 }
@@ -42,6 +38,12 @@ def main():
         raise RuntimeError(f"Directory for day {day_number} already exists")
 
     os.mkdir(day_directory)
+
+    if not os.path.exists(f"./common/day_{day_number}"):
+        os.mkdir(f"./common/day_{day_number}")
+        for filename in ("input.txt", "sample_input.txt", "sample_output_1.txt", "sample_output_2.txt"):
+            with open(f"./common/day_{day_number}/{filename}", "w"):
+                pass
 
     for filename, template_name in frameworks[framework]["files"]:
         filepath = f"{day_directory}/{filename}"

@@ -11,7 +11,7 @@ def part_2(inp: str) -> None:
 
 if __name__ == "__main__":
     os.chdir(os.path.dirname(__file__))
-    with open("./input.txt", "r") as fp:
+    with open(f"../../../common/{os.path.split(os.getcwd())}/input.txt", "r") as fp:
         inp = fp.read()
 
     part_1_result = part_1(inp)
