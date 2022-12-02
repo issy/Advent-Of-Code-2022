@@ -1,48 +1,6 @@
 import os
 
 
-# --- item hierarchy ---
-
-# A/X - rock
-# B/Y - paper
-# C/Z - scissors
-
-# rock beats scissors
-# paper beats rock
-# scissors beats paper
-
-# (index + 2) % 3
-
-# --- item scoring ---
-
-# rock - 1
-# paper - 2
-# scissors - 3
-
-# index % 3 + 1
-
-# --- round scoring ---
-
-# loss - 0
-# draw - 3
-# win - 6
-
-# I choose rock
-# rock = 3
-# paper = 0
-# scissors = 6
-
-# I choose paper
-# rock = 6
-# paper = 3
-# scissors = 0
-
-# I choose scissors
-# rock = 0
-# paper = 6
-# scissors = 3
-
-
 def calculate_score(enemy_weapon, my_weapon) -> int:
     won: bool = enemy_weapon == (my_weapon + 2) % 3
     score = my_weapon + 1
@@ -64,26 +22,6 @@ def part_1(inp: str) -> int:
         total_score += calculate_score(enemy_weapon, my_weapon)
 
     return total_score
-
-
-# --- outcomes ---
-
-# rock, win = paper
-# rock, draw = rock
-# rock, lose = scissors
-# XYZ = LDW
-
-# 0 0 = 2
-# 0 1 = 0
-# 0 2 = 1
-
-# 1 0 = 0
-# 1 1 = 1
-# 1 2 = 2
-
-# 2 0 = 1
-# 2 1 = 2
-# 2 2 = 0
 
 
 def calculate_move_from_outcome(enemy_move: int = 0, desired_outcome: int = 0) -> int:
