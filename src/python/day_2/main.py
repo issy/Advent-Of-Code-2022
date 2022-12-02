@@ -1,14 +1,10 @@
 import os
 
 
-def calculate_score(enemy_weapon, my_weapon) -> int:
-    won: bool = enemy_weapon == (my_weapon + 2) % 3
-    score = my_weapon + 1
-    if won:
-        score += 6
-    elif my_weapon == enemy_weapon:
-        score += 3
-    return score
+def calculate_score(enemy_weapon: int, my_weapon: int) -> int:
+    weapon_score = my_weapon + 1
+    round_score = 3 * (2 - (((enemy_weapon - my_weapon) + 4) % 3))
+    return weapon_score + round_score
 
 
 def part_1(inp: str) -> int:

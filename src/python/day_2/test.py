@@ -1,6 +1,6 @@
 import os.path
 
-from .main import part_1, part_2, calculate_move_from_outcome
+from .main import part_1, part_2, calculate_move_from_outcome, calculate_score
 
 
 def test_part_1():
@@ -39,3 +39,19 @@ def test_outcome_predictor():
     ]
     for enemy_move, desired_outcome, expected_outcome in outcomes:
         assert calculate_move_from_outcome(enemy_move, desired_outcome) == expected_outcome
+
+
+def test_score_calculator():
+    scores = [  # opponent move, my move, my score
+        [1, 0, 1],
+        [2, 1, 2],
+        [0, 2, 3],
+        [0, 0, 4],
+        [1, 1, 5],
+        [2, 2, 6],
+        [2, 0, 7],
+        [0, 1, 8],
+        [1, 2, 9],
+    ]
+    for enemy_move, my_move, expected_score in scores:
+        assert calculate_score(enemy_move, my_move) == expected_score
