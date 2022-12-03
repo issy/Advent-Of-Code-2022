@@ -2,7 +2,7 @@ import os
 
 
 def get_elves(inp: str) -> list[int]:
-  return [sum(map(int, lines.split('\n'))) for lines in inp.split('\n\n')]
+    return [sum(map(int, lines.split("\n"))) for lines in inp.split("\n\n")]
 
 
 def part_1(inp: str) -> int:

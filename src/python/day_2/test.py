@@ -26,17 +26,7 @@ def test_part_2():
 
 
 def test_outcome_predictor():
-    outcomes = [
-        [0, 0, 2],
-        [0, 1, 0],
-        [0, 2, 1],
-        [1, 0, 0],
-        [1, 1, 1],
-        [1, 2, 2],
-        [2, 0, 1],
-        [2, 1, 2],
-        [2, 2, 0]
-    ]
+    outcomes = [[0, 0, 2], [0, 1, 0], [0, 2, 1], [1, 0, 0], [1, 1, 1], [1, 2, 2], [2, 0, 1], [2, 1, 2], [2, 2, 0]]
     for enemy_move, desired_outcome, expected_outcome in outcomes:
         assert calculate_move_from_outcome(enemy_move, desired_outcome) == expected_outcome
 
