@@ -1,32 +1,38 @@
 import os
 from string import ascii_letters
+from typing import TypeVar
+
+
+T = TypeVar("T")
+
+
+def chunks(lst: T, n: int) -> list[T]:
+    return [lst[i : i + n] for i in range(0, len(lst), n)]
+
+
+def get_character_score(char: str) -> int:
+    return ascii_letters.index(char) + 1
+
+
+def find_common_character(strings: list[str]) -> str:
+    distinct_chars = {char for string in strings for char in string}
+    return [char for char in distinct_chars if all(char in string for string in strings)][0]
 
 
 def part_1(inp: str) -> int:
     rucksacks = inp.split("\n")
     score = 0
     for rucksack in rucksacks:
-        intersection = len(rucksack) // 2
-        first_half = rucksack[:intersection]
-        second_half = rucksack[intersection:]
-        (duplicate_letter,) = tuple({
-            letter for letter in rucksack
-            if letter in first_half
-            and letter in second_half
-        })
-        score += ascii_letters.index(duplicate_letter) + 1
+        score += get_character_score(find_common_character(chunks(rucksack, len(rucksack) // 2)))
 
     return score
 
 
 def part_2(inp: str) -> int:
     lines = inp.split("\n")
-    groups = [lines[i:i + 3] for i in range(0, len(lines), 3)]
     score = 0
-    for group in groups:
-        all_distinct_letters = {letter for elf in group for letter in elf}
-        (shared_letter,) = [letter for letter in all_distinct_letters if all(letter in elf for elf in group)]
-        score += ascii_letters.index(shared_letter) + 1
+    for group in chunks(lines, 3):
+        score += get_character_score(find_common_character(group))
 
     return score
 
