@@ -1,21 +1,24 @@
-const sum = (a: number, b: number): number => a + b;
-const split = (separator: string) => (inp: string): string[] => inp.split(separator);
+import * as utils from "../utils.js";
 
-const getElves = (inp: string): number[] => inp
-    .split('\n\n')
-    .map(split('\n'))
-    .map((lineGroup) => lineGroup
-        .map(Number.parseInt)
-        .reduce(sum, 0)
-    );
+const getElves = (): number[] => utils.readInputFile(1, "input.txt")
+  .split("\n\n")
+  .map(utils.split("\n"))
+  .map((lineGroup) => lineGroup
+    .map(Number.parseInt)
+    .reduce(utils.sum, 0)
+  );
 
-export const part1 = (inp: string): number => {
-  return Math.max(...getElves(inp));
+export const part1 = (): number => {
+  return Math.max(...getElves());
 };
 
-export const part2 = (inp: string): number => {
-  const elves = getElves(inp).sort();
+export const part2 = (): number => {
+  const elves = getElves();
   return elves
-      .slice(elves.length - 3)
-      .reduce(sum, 0);
+    .sort()
+    .slice(elves.length - 3)
+    .reduce(utils.sum, 0);
 };
+
+console.log(part1());
+console.log(part2());
