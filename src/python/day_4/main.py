@@ -14,13 +14,7 @@ def parse_lines(inp: str) -> list[tuple[set[int], set[int]]]:
 
         return range(nums[0], nums[1] + 1), range(nums[2], nums[3] + 1)
 
-    return [
-        (set(i[0]), set(i[1]))
-        for i in [
-            parse_line(line)
-            for line in inp.split("\n")
-        ]
-    ]
+    return [(set(i[0]), set(i[1])) for i in [parse_line(line) for line in inp.split("\n")]]
 
 
 def check_intersection(line: tuple[set[int], set[int]]) -> bool:
