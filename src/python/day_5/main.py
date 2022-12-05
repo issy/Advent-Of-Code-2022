@@ -11,7 +11,7 @@ def parse_lines(inp: str) -> tuple[dict[str, list[str]], list[tuple[int, str, st
             break
 
     crate_lines = lines[:break_index]
-    instruction_lines = lines[break_index + 1:]
+    instruction_lines = lines[break_index + 1 :]
 
     crates = {}
     for index, crate_key in enumerate(crate_lines.pop()[1::4]):
@@ -35,12 +35,7 @@ def parse_lines(inp: str) -> tuple[dict[str, list[str]], list[tuple[int, str, st
     return crates, instructions
 
 
-def move_crates(
-    crates: dict[str, list[str]],
-    instructions: list[tuple[int, str, str]],
-    *,
-    keep_order: bool = False
-) -> str:
+def move_crates(crates: dict[str, list[str]], instructions: list[tuple[int, str, str]], *, keep_order: bool = False) -> str:
     for quantity, from_stack, to_stack in instructions:
         from_stack = crates[from_stack]
         to_stack = crates[to_stack]
