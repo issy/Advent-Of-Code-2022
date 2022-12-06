@@ -1,15 +1,19 @@
 import os
 
 
+def detect_unique_chars(inp: str, window_size: int) -> int:
+    for i in range(0, len(inp) - window_size):
+        window = [inp[x] for x in range(i, i + window_size)]
+        if len(set(window)) == window_size:
+            return i + window_size
+
+
 def part_1(inp: str) -> int:
-    for i in range(0, len(inp) - 4):
-        window = [inp[x] for x in range(i, i + 4)]
-        if len(set(window)) == 4:
-            return i + 1
+    return detect_unique_chars(inp, 4)
 
 
-def part_2(inp: str) -> None:
-    ...
+def part_2(inp: str) -> int:
+    return detect_unique_chars(inp, 14)
 
 
 if __name__ == "__main__":
