@@ -1,6 +1,6 @@
 import os.path
 
-from .main import part_1, part_2, calculate_move_from_outcome, calculate_score
+from .main import calculate_move_from_outcome, calculate_score, part_1, part_2
 
 
 def test_part_1():

@@ -2,7 +2,6 @@ import os
 from string import ascii_letters
 from typing import TypeVar
 
-
 T = TypeVar("T")
 
 
