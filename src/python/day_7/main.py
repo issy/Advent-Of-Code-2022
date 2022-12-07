@@ -11,9 +11,6 @@ class Node:
     children: list[Node]
     files: list[tuple[int, str]]
 
-    def __repr__(self) -> str:
-        return f"Node(name={self.name!r} children={len(self.children)} has_parent={self.parent is None} files={self.files!r})"
-
     def __init__(self, name: str, parent: Optional[Node] = None):
         self.name = name
         self.parent = parent
