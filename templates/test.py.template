@@ -11,7 +11,7 @@ def test_part_1():
         expected_output = fp.read()
 
     returned_output = part_1(sample_input)
-    assert str(returned_output) == expected_output
+    assert returned_output == int(expected_output)
 
 
 def test_part_2():
@@ -22,4 +22,4 @@ def test_part_2():
         expected_output = fp.read()
 
     returned_output = part_2(sample_input)
-    assert str(returned_output) == expected_output
+    assert returned_output == int(expected_output)
