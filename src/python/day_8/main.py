@@ -98,5 +98,7 @@ if __name__ == "__main__":
         inp = fp.read()
 
     part_1_result = part_1(inp)
+    print("part 1 result:", part_1_result)
 
     part_2_result = part_2(inp)
+    print("part 2 result:", part_2_result)
