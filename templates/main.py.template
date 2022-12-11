@@ -1,11 +1,11 @@
 import os
 
 
-def part_1(inp: str) -> None:
+def part_1(inp: str) -> int:
     ...
 
 
-def part_2(inp: str) -> None:
+def part_2(inp: str) -> int:
     ...
 
 
